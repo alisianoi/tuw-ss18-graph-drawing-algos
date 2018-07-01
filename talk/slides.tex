@@ -11,13 +11,31 @@
   \maketitle
 
   \begin{frame}
-    \frametitle{This is the first slide}
-    %Content goes here
+    \frametitle{Backup slide}
+
+    \begin{definition}[k-vertex-connected graph]
+      A connected graph \(G\) is a k-vertex-connected (k-connected) if it has more than k vertices and remains connected if fewer than k vertices are removed.
+    \end{definition}
   \end{frame}
+
   \begin{frame}
-    \frametitle{This is the second slide}
-    \framesubtitle{A bit more information about this}
-    %More content goes here
+    \frametitle{Backup slide: planar and outerplanar graphs}
+
+    \begin{definition}[planar graph]
+      A graph \(G\) is a planar graph if it can embedded in the plane, i.e. it can be drawn on the plane in such a way that its edges intersect only at their endpoints.
+    \end{definition}
+
+    \begin{definition}[planar graph: forbidden minors]
+      A finite graph \(G\) is planar if and only if its minors include neither \(K_{5,5}\) nor \(K_{3, 3}\).
+    \end{definition}
+
+    \begin{definition}[outerplanar graph]
+      A graph \(G\) is an outerplanar graph if it has a planar drawing for which all vertices belong to the outer edge.
+    \end{definition}
+
+    \begin{definition}[outerplanar graph: forbidden minors]
+      A finite graph \(G\) is outerplanar if and only if its minors include neither \(K_{5, 5}\), nor \(K_{3, 3}\), nor \(K_4\) nor \(K_{2, 3}\).
+    \end{definition}
   \end{frame}
 % etc
 \end{document}
