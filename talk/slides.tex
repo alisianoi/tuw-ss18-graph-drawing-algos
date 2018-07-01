@@ -2,6 +2,19 @@
 \usetheme{metropolis}
 
 \usepackage{svg}
+\usepackage[
+  backend=biber
+  , style=numeric
+  , sortlocale=en_US
+  , url=false
+  , doi=true
+  , eprint=false
+  , giveninits=false
+  , maxbibnames=20
+  , maxnames=20
+  , maxcitenames=4
+]{biblatex}
+\addbibresource{references/references.bib}
 
 \graphicspath{./figures/}
 
@@ -14,6 +27,36 @@
 \begin{document}
 
 \maketitle
+
+\section{Introduction}
+
+\begin{frame}
+  \frametitle{Acknowledgement}
+
+  This presentation is based on the following work:
+
+  \fullcite{2017-lazard-ratio}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Motivation}
+
+  TODO
+  \end{frame}
+
+\section{Preliminary Definitions}
+
+\begin{frame}
+  \frametitle{Outerplanar graphs}
+
+    \begin{definition}[outerplanar graph]
+    A graph \(G\) is an outerplanar graph if it has a planar drawing for which all vertices belong to the outer edge.
+  \end{definition}
+
+  \begin{definition}[outerplanar graph: forbidden minors]
+    A finite graph \(G\) is outerplanar if and only if its minors include neither \(K_4\) nor \(K_{2, 3}\).
+  \end{definition}
+\end{frame}
 
 \section{Main Result}
 
@@ -35,9 +78,32 @@
     \end{enumerate}
   \end{frame}
 
+\begin{frame}
+  \frametitle{Chain drawing lemma}
+  \begin{lemma}
+    Given a chain C with n vertices, an external edge e of C, a segment s of length 1 in the plane and a direction d such that the (smaller) angle between s and d is \(\theta < \theta_0 = \arccos(1/4)\approx 75,5^{\circ}\), there exists a planar straight-line drawing of C such that:
+    \begin{enumerate}
+    \item The drawing is completely contained within the strip \(S(s, d)\).
+    \item For each external edge \(e'\) of C:
+      \begin{enumerate}
+      \item It has length 1.
+      \item It is not parallel to d and forms an angle less than \(\theta_0\) with it.
+      \item Strip \(S(e', d)\) is empty.
+      \end{enumerate}
+    \item Each non-external edge of C has length greater than 1/2.
+    \end{enumerate}
+  \end{lemma}
+\end{frame}
+
 \begin{frame}[standout]
   Thank you!
-  \end{frame}
+\end{frame}
+
+\begin{frame}[fragile]{References}
+\printbibliography
+\end{frame}
+
+\appendix
 
 \section{Backup Slides}
 
@@ -100,5 +166,7 @@
   \frametitle{Backup slide: series-parallel graphs}
   See lecture 3
 \end{frame}
+
+
 % etc
 \end{document}
