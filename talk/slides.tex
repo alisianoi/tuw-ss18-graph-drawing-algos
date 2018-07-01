@@ -8,45 +8,71 @@
 
 
 \begin{document}
+
 \maketitle
+
+\section{Main Result}
 
 \begin{frame}
   \frametitle{Main result}
   \begin{theorem}
     The planar edge-length ratio of an outerplanar graph is strictly less than 2. Also, for any given real positive number \(\varepsilon\), there exists an outerplanar graph whose planar edge-length ratio is greater than \(2 - \varepsilon\).
     \end{theorem}
-  \end{frame}
+\end{frame}
 
 \begin{frame}[standout]
   Thank you!
   \end{frame}
 
+\section{Backup Slides}
+
 \begin{frame}
-    \frametitle{Backup slide}
+  \frametitle{Backup slide: connected graphs}
 
-    \begin{definition}[k-vertex-connected graph]
-      A connected graph \(G\) is a k-vertex-connected (k-connected) if it has more than k vertices and remains connected if fewer than k vertices are removed.
+  \begin{definition}[k-vertex-connected graph]
+    A connected graph \(G\) is a k-vertex-connected (k-connected) if it has more than k vertices and remains connected if fewer than k vertices are removed.
+  \end{definition}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Backup slide: planar and outerplanar graphs}
+
+  \begin{definition}[planar graph]
+    A graph \(G\) is a planar graph if it can embedded in the plane, i.e. it can be drawn on the plane in such a way that its edges intersect only at their endpoints.
+  \end{definition}
+
+  \begin{definition}[planar graph: forbidden minors]
+    A finite graph \(G\) is planar if and only if its minors include neither \(K_{5,5}\) nor \(K_{3, 3}\).
+  \end{definition}
+
+  \begin{definition}[outerplanar graph]
+    A graph \(G\) is an outerplanar graph if it has a planar drawing for which all vertices belong to the outer edge.
+  \end{definition}
+
+  \begin{definition}[outerplanar graph: forbidden minors]
+    A finite graph \(G\) is outerplanar if and only if its minors include neither \(K_{5, 5}\), nor \(K_{3, 3}\), nor \(K_4\) nor \(K_{2, 3}\).
+  \end{definition}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Backup slide: outerplanar graphs}
+
+  \begin{definition}[maximal outerplanar graph]
+    An outerplanar graph \(G\) is a maximal outerplanar graph if no more edges can be added while preserving outerplanarity.
+  \end{definition}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Backup slide: dual graphs}
+
+  \begin{definition}[dual graph]
+    Given a plane graph \(G\), its dual graph \(G^*\) is a plane graph that has a vertex for each face of \(G\). The dual graph \(G^*\) has an edge whenever two faces of \(G\) are separated from each other by an edge, and a self-loop when the same face appears on both sides of an edge.
     \end{definition}
   \end{frame}
 
-  \begin{frame}
-    \frametitle{Backup slide: planar and outerplanar graphs}
-
-    \begin{definition}[planar graph]
-      A graph \(G\) is a planar graph if it can embedded in the plane, i.e. it can be drawn on the plane in such a way that its edges intersect only at their endpoints.
-    \end{definition}
-
-    \begin{definition}[planar graph: forbidden minors]
-      A finite graph \(G\) is planar if and only if its minors include neither \(K_{5,5}\) nor \(K_{3, 3}\).
-    \end{definition}
-
-    \begin{definition}[outerplanar graph]
-      A graph \(G\) is an outerplanar graph if it has a planar drawing for which all vertices belong to the outer edge.
-    \end{definition}
-
-    \begin{definition}[outerplanar graph: forbidden minors]
-      A finite graph \(G\) is outerplanar if and only if its minors include neither \(K_{5, 5}\), nor \(K_{3, 3}\), nor \(K_4\) nor \(K_{2, 3}\).
-    \end{definition}
-  \end{frame}
+\begin{frame}
+  \frametitle{Backup slide: series-parallel graphs}
+  See lecture 3
+\end{frame}
 % etc
 \end{document}
