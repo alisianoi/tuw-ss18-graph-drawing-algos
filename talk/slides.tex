@@ -41,8 +41,21 @@
 \begin{frame}
   \frametitle{Motivation}
 
-  TODO
-  \end{frame}
+  \begin{itemize}
+  \item Does a graph with prescribed edge lengths admit a planar straight-line drawing?
+  \item Does a two- or three-connected planar graph admit a unit-length planar straight-line drawing?
+  \item Does a degree four tree have a planar straight-line drawing with vertices at grid positions and edges of the same length?
+  \end{itemize}
+
+  \begin{center}
+    All these problems are NP-hard.
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Relax problem requirements}
+\end{frame}
 
 \section{Preliminary Definitions}
 
@@ -56,6 +69,100 @@
   \begin{definition}[outerplanar graph: forbidden minors]
     A finite graph \(G\) is outerplanar if and only if its minors include neither \(K_4\) nor \(K_{2, 3}\).
   \end{definition}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outerplanar graphs: positive example}
+
+  \tikzstyle{vertex} = [
+    circle
+    , fill=black
+    , minimum size=5pt
+    , inner sep=0pt
+  ]
+  \tikzstyle{edge} = [
+    draw
+    , thick
+    , -
+  ]
+
+  \begin{figure}
+    \begin{tikzpicture}[scale=1,auto,swap]
+      \node[vertex] (0) at ( 0, 1.73)  {};
+      \node[vertex] (1) at ( 2, 1.73)  {};
+      \node[vertex] (2) at (-3, 0)     {};
+      \node[vertex] (3) at (-1, 0)     {};
+      \node[vertex] (4) at ( 1, 0)     {};
+      \node[vertex] (5) at ( 3, 0)     {};
+      \node[vertex] (6) at (-2, -1.73) {};
+      \node[vertex] (7) at ( 0, -1.73) {};
+      \node[vertex] (8) at ( 2, -1.73) {};
+
+      \path[edge] (0) -- (1);
+      \path[edge] (0) -- (3);
+      \path[edge] (0) -- (4);
+      \path[edge] (1) -- (4);
+      \path[edge] (1) -- (5);
+      \path[edge] (2) -- (3);
+      \path[edge] (2) -- (6);
+      \path[edge] (3) -- (4);
+      \path[edge] (3) -- (6);
+      \path[edge] (3) -- (7);
+      \path[edge] (4) -- (5);
+      \path[edge] (4) -- (7);
+      \path[edge] (4) -- (8);
+      \path[edge] (5) -- (8);
+      \path[edge] (6) -- (7);
+    \end{tikzpicture}
+    \caption{An outerplanar graph}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outerplanar graphs: maximal example}
+
+  \tikzstyle{vertex} = [
+    circle
+    , fill=black
+    , minimum size=5pt
+    , inner sep=0pt
+  ]
+  \tikzstyle{edge} = [
+    draw
+    , thick
+    , -
+  ]
+
+  \begin{figure}
+    \begin{tikzpicture}[scale=1,auto,swap]
+      \node[vertex] (0) at ( 0, 1.73)  {};
+      \node[vertex] (1) at ( 2, 1.73)  {};
+      \node[vertex] (2) at (-3, 0)     {};
+      \node[vertex] (3) at (-1, 0)     {};
+      \node[vertex] (4) at ( 1, 0)     {};
+      \node[vertex] (5) at ( 3, 0)     {};
+      \node[vertex] (6) at (-2, -1.73) {};
+      \node[vertex] (7) at ( 0, -1.73) {};
+      \node[vertex] (8) at ( 2, -1.73) {};
+
+      \path[edge] (0) -- (1);
+      \path[edge] (0) -- (3);
+      \path[edge] (0) -- (4);
+      \path[edge] (1) -- (4);
+      \path[edge] (1) -- (5);
+      \path[edge] (2) -- (3);
+      \path[edge] (2) -- (6);
+      \path[edge] (3) -- (4);
+      \path[edge] (3) -- (6);
+      \path[edge] (3) -- (7);
+      \path[edge] (4) -- (5);
+      \path[edge] (4) -- (7);
+      \path[edge] (4) -- (8);
+      \path[edge] (5) -- (8);
+      \path[edge] (6) -- (7);
+    \end{tikzpicture}
+    \caption{Maximal outerplanar graph}
+  \end{figure}
 \end{frame}
 
 \section{Main Result}
