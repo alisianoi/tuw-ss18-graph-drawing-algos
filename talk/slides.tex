@@ -24,6 +24,17 @@
     \end{theorem}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Chain definition}
+  A sequence \(T_s, T_{s+1}, \dots, T_t\) of triangles from \(G\), s.t.
+  \begin{enumerate}
+  \item \(s \leq 0 \leq t\)
+  \item \(T_0\) has an outer edge from \(G\) (its vertices labeled 0) and a third vertex (labeled 1).
+  \item \(\forall i\in [1, t]\): the vertices of \(T_i\) are labeled \(\left\{i - 1, i, i + 1\right\}\). Triangles \(T_i\) and \(T_{i - 1}\) share an edge \((i, i - 1)\).
+  \item \(\forall i\in [s, -1]\): the vertices of \(T_i\) are labeled \(\left\{i, i + 1, i + 2\right\}\). Triangles \(T_i\) and \(T_{i + 1}\) share an edge \((i + 1, i + 2)\).
+    \end{enumerate}
+  \end{frame}
+
 \begin{frame}[standout]
   Thank you!
   \end{frame}
@@ -54,7 +65,7 @@
   \end{definition}
 
   \begin{definition}[outerplanar graph: forbidden minors]
-    A finite graph \(G\) is outerplanar if and only if its minors include neither \(K_{5, 5}\), nor \(K_{3, 3}\), nor \(K_4\) nor \(K_{2, 3}\).
+    A finite graph \(G\) is outerplanar if and only if its minors include neither \(K_4\) nor \(K_{2, 3}\).
   \end{definition}
 \end{frame}
 
