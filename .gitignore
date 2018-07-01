@@ -1,9 +1,15 @@
 *.aux
+*.bbl
+*.bcf
+*.blg
 *.fls
 *.log
 *.nav
 *.out
 *.snm
 *.toc
+*.vrb
 *.xdv
+*.run.xml
 *.fdb_latexmk
+svg-inkscape
