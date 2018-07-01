@@ -1,6 +1,10 @@
 \documentclass[xetex,mathserif,serif]{beamer}
 \usetheme{metropolis}
 
+\usepackage{svg}
+
+\graphicspath{./figures/}
+
 \title{On the Edge-length Ratio of Outerplanar Graphs}
 \author{Aleksandr Lisianoi}
 \institute{Technische Universität Wien}
@@ -67,7 +71,18 @@
 
   \begin{definition}[dual graph]
     Given a plane graph \(G\), its dual graph \(G^*\) is a plane graph that has a vertex for each face of \(G\). The dual graph \(G^*\) has an edge whenever two faces of \(G\) are separated from each other by an edge, and a self-loop when the same face appears on both sides of an edge.
-    \end{definition}
+  \end{definition}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Backup slide: dual graphs (example)}
+
+  \begin{figure}
+    \begin{center}
+      \includesvg[width=0.6\textwidth]{figures/nonisomorphic-dual-graphs}
+    \end{center}
+    \caption{Two non-isomorphic dual graphs, \href{https://en.wikipedia.org/wiki/Dual_graph\#/media/File:Noniso_dual_graphs.svg}{image source}.}
+  \end{figure}
   \end{frame}
 
 \begin{frame}
