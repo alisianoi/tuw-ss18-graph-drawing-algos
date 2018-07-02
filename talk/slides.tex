@@ -67,18 +67,24 @@
 
   \begin{itemize}
   \item Does a graph with prescribed edge lengths admit a planar straight-line drawing?
+    \pause
   \item Does a two- or three-connected planar graph admit a unit-length planar straight-line drawing?
+    \pause
   \item Does a degree four tree have a planar straight-line drawing with vertices at grid positions and edges of the same length?
   \end{itemize}
-
+  \pause
   \begin{center}
     All these problems are NP-hard.
-    \end{center}
+  \end{center}
 
 \end{frame}
 
 \begin{frame}
   \frametitle{Relax problem requirements}
+  \begin{itemize}
+  \item Choose a specific graph family.
+  \item Accept ``close enough'' quality criteria.
+    \end{itemize}
 \end{frame}
 
 \section{Preliminary Definitions}
@@ -390,7 +396,7 @@
 \begin{frame}
   \frametitle{Chain drawing lemma}
   \begin{lemma}
-    Given a chain C with n vertices, an external edge e of C, a segment s of length 1 in the plane and a direction d such that the (smaller) angle between s and d is \(\theta < \theta_0 = \arccos(1/4)\approx 75,5^{\circ}\), there exists a planar straight-line drawing of C such that:
+    Given a chain C with n vertices, an external edge e of C, a segment s of length 1 in the plane and a direction d s.t. the (smaller) angle between s and d is \(\theta < \theta_0 = \arccos(1/4)\approx 75.5^{\circ}\), there exists a planar straight-line drawing of C such that:
     \begin{enumerate}
     \item The drawing is completely contained within the strip \(S(s, d)\).
     \item For each external edge \(e'\) of C:
