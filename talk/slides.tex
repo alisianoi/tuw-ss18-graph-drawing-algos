@@ -23,7 +23,6 @@
 \institute{Technische Universität Wien}
 \date{\today}
 
-
 \begin{document}
 
 \tikzstyle{vertex} = [
@@ -359,7 +358,7 @@
       \node[vertex] (8) at ( 2, -1.73) {};
 
       \path[edge] (0) -- (1);
-      \path[edge] (0) -- (3);
+      \path[edge] (0) -- node[fvertex]{\(e'\)} (3);
       \path[edge] (0) -- (4);
       \path[edge] (1) -- (4);
       \path[edge] (1) -- (5);
@@ -380,7 +379,151 @@
 
 \begin{frame}
   \frametitle{Chain properties}
-  \end{frame}
+  \begin{itemize}
+  \item Outer edge \(e'\) determines the maximal chain \(C_{e'}\).
+    \pause
+  \item Edges of \(C_{e'}\) can be partitioned into two sets: \(S_{e'}\) and \(L_{e'}\).
+  \item Graph \(G\) can be decomposed into a tree of chains.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Chain properties: \(S_{e'}\) and \(L_{e'}\)}
+
+  \begin{figure}
+    \begin{tikzpicture}[scale=1,auto,swap]
+
+      \node[fvertex] (50) at ( 0,     2) {\(v_0\)};
+      \node[fvertex] (51) at (-1.1, 0.3) {\(v_0\)};
+      \node[fvertex] (52) at (1, -0.4)   {\(v_1\)};
+      \node[fvertex] (53) at (2, 2)      {\(v_2\)};
+      \node[fvertex] (54) at (3.3, 0)    {\(v_3\)};
+      \node[fvertex] (55) at (0, -2)   {\(v_{-1}\)};
+      \node[fvertex] (56) at (-2, -2)  {\(v_{-2}\)};
+
+      \fill[gray!30] (0,1.73) -- (-1,0) -- (1,0) -- cycle;
+      \node[fvertex,fill=gray!30] (20) at (0, 0.6) {\(T_0\)};
+
+      \fill[gray!30] (0,1.73) -- (2,1.73) -- (1,0) -- cycle;
+      \node[fvertex,fill=gray!30] (21) at (1, 1) {\(T_1\)};
+
+      \fill[gray!30] (1,0) -- (2,1.73) -- (3,0) -- cycle;
+      \node[fvertex,fill=gray!30] (22) at (2, 0.6) {\(T_2\)};
+
+      \fill[gray!30] (-1,0) -- (1,0) -- (0,-1.73) -- cycle;
+      \node[fvertex,fill=gray!30] (23) at (0, -0.6) {\(T_{-1}\)};
+
+      \fill[gray!30] (-1,0) -- (0,-1.73) -- (-2,-1.73) -- cycle;
+      \node[fvertex,fill=gray!30] (24) at (-1, -1) {\(T_{-2}\)};
+
+      \node[vertex] (0) at ( 0, 1.73)  {};
+      \node[vertex] (1) at ( 2, 1.73)  {};
+      \node[vertex] (2) at (-3, 0)     {};
+      \node[vertex] (3) at (-1, 0)     {};
+      \node[vertex] (4) at ( 1, 0)     {};
+      \node[vertex] (5) at ( 3, 0)     {};
+      \node[vertex] (6) at (-2, -1.73) {};
+      \node[vertex] (7) at ( 0, -1.73) {};
+      \node[vertex] (8) at ( 2, -1.73) {};
+
+      \path[edge] (0) -- (1);
+      \path[edge] (0) -- node[fvertex]{\(e'\)} (3);
+      \draw[dashed] (0) -- (4);
+      \draw[dashed] (1) -- (4);
+      \draw[dashed] (1) -- (5);
+      % \path[edge] (0) -- (4);
+      % \path[edge] (1) -- (4);
+      % \path[edge] (1) -- (5);
+      \path[edge] (2) -- (3);
+      \path[edge] (2) -- (6);
+      \draw[dashed] (3) -- (4);
+      % \path[edge] (3) -- (4);
+      \path[edge] (3) -- (6);
+      \draw[dashed] (3) -- (7);
+      % \path[edge] (3) -- (7);
+      \path[edge] (4) -- (5);
+      \path[edge] (4) -- (7);
+      \path[edge] (4) -- (8);
+      \path[edge] (5) -- (8);
+      \draw[dashed] (6) -- (7);
+      % \path[edge] (6) -- (7);
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Chain properties: decomposition}
+
+  \begin{figure}
+    \begin{tikzpicture}[scale=1,auto,swap]
+
+      \node[fvertex] (50) at ( 0,     2) {\(v_0\)};
+      \node[fvertex] (51) at (-1.1, 0.3) {\(v_0\)};
+      \node[fvertex] (52) at (1, -0.4)   {\(v_1\)};
+      \node[fvertex] (53) at (2, 2)      {\(v_2\)};
+      \node[fvertex] (54) at (3.3, 0)    {\(v_3\)};
+      \node[fvertex] (55) at (0, -2)   {\(v_{-1}\)};
+      \node[fvertex] (56) at (-2, -2)  {\(v_{-2}\)};
+
+      \fill[gray!30] (0,1.73) -- (-1,0) -- (1,0) -- cycle;
+      \node[fvertex,fill=gray!30] (20) at (0, 0.6) {\(T_0\)};
+
+      \fill[gray!30] (0,1.73) -- (2,1.73) -- (1,0) -- cycle;
+      \node[fvertex,fill=gray!30] (21) at (1, 1) {\(T_1\)};
+
+      \fill[gray!30] (1,0) -- (2,1.73) -- (3,0) -- cycle;
+      \node[fvertex,fill=gray!30] (22) at (2, 0.6) {\(T_2\)};
+
+      \fill[gray!30] (-1,0) -- (1,0) -- (0,-1.73) -- cycle;
+      \node[fvertex,fill=gray!30] (23) at (0, -0.6) {\(T_{-1}\)};
+
+      \fill[gray!30] (-1,0) -- (0,-1.73) -- (-2,-1.73) -- cycle;
+      \node[fvertex,fill=gray!30] (24) at (-1, -1) {\(T_{-2}\)};
+
+      \node[vertex] (0) at ( 0, 1.73)  {};
+      \node[vertex] (1) at ( 2, 1.73)  {};
+      \node[vertex] (2) at (-5, 0)     {};
+      \node[vertex] (9) at (-3, 0)     {};
+      \node[vertex] (10) at (-4, -1.73) {};
+      \node[vertex] (3) at (-1, 0)     {};
+      \node[vertex] (4) at ( 1, 0)     {};
+      \node[vertex] (5) at ( 3, 0)     {};
+      \node[vertex] (6) at (-2, -1.73) {};
+      \node[vertex] (7) at ( 0, -1.73) {};
+      \node[vertex] (8) at ( 5, -1.73) {};
+      \node[vertex] (11) at (4, 0)     {};
+      \node[vertex] (12) at (6, 0)     {};
+
+      \path[edge] (0) -- (1);
+      \path[edge] (0) -- node[fvertex]{\(e'\)} (3);
+      \draw[dashed] (0) -- (4);
+      \draw[dashed] (1) -- (4);
+      \draw[dashed] (1) -- (5);
+      % \path[edge] (0) -- (4);
+      % \path[edge] (1) -- (4);
+      % \path[edge] (1) -- (5);
+      % \path[edge] (2) -- (3);
+      % \path[edge] (2) -- (6);
+      \path[edge] (2) -- (9);
+      \path[edge] (2) -- (10);
+      \path[edge] (9) -- (10);
+      \draw[dashed] (3) -- (4);
+      % \path[edge] (3) -- (4);
+      \path[edge] (3) -- (6);
+      \draw[dashed] (3) -- (7);
+      % \path[edge] (3) -- (7);
+      \path[edge] (4) -- (5);
+      \path[edge] (4) -- (7);
+      % \path[edge] (4) -- (8);
+      % \path[edge] (5) -- (8);
+      \draw[dashed] (6) -- (7);
+      % \path[edge] (6) -- (7);
+      \path[edge] (8) -- (11);
+      \path[edge] (8) -- (12);
+      \path[edge] (11) -- (12);
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
 
 \begin{frame}
   \frametitle{Half-inifinite strip}
@@ -429,11 +572,74 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Possible chains}
+
+  \begin{itemize}
+  \item Single triangle.
+  \item Positive sequence.
+  \item Positive and negative sequence.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Possible chains: single triangle}
+
   \begin{figure}
     \begin{tikzpicture}[scale=0.5,auto,swap]
-      \node[fvertex] (0) at (0, -0.7)  {\(v_{0}^{-}\)};
-      \node[fvertex] (1) at (-3, 4.7) {\(v_{0}^{+}\)};
-      \node[fvertex] (2) at ( 2, 4.5) {\(v_{2}\)};
+      \node[fvertex] (0) at (0, -0.7)   {\(v_{0}^{-}\)};
+      \node[fvertex] (1) at (-3, 4.7)   {\(v_{0}^{+}\)};
+      \node[fvertex] (2) at (-0.3, 3.2) {\(v_{1}\)};
+
+      \node[vertex] (10) at (0, 0)       {};
+      \node[vertex] (11) at (-3, 4)      {};
+      \node[vertex] (12) at (-0.6, 2.7)  {};
+
+      \path[edge] (10) -- (11);
+      \path[edge] (10) -- (12);
+      \path[edge] (11) -- (12);
+
+      \draw[dashed] ( 0, 0) circle (2.5);
+      \draw[dashed] (-3, 4) circle (2.5);
+
+      \path[edge] (0, 0)  -- (-3, 4);
+      \path[edge] (0, 0)  -- (10, 0);
+      \path[edge] (-3, 4) -- (10, 4);
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Possible chains: positive chain}
+
+  \begin{figure}
+    \begin{tikzpicture}[scale=0.5,auto,swap]
+      \node[fvertex] (0) at (0, -0.7)   {\(v_{0}^{-}\)};
+      \node[fvertex] (1) at (-3, 4.7)   {\(v_{0}^{+}\)};
+      \node[fvertex] (2) at (-0.3, 3.2) {\(v_{1}\)};
+      \node[fvertex] (3) at ( 2, 4.5)   {\(v_{2}\)};
+      \node[fvertex] (4) at (4.4, 2.2)  {\(v_{3}\)};
+      \node[fvertex] (5) at (7, 4.5)    {\(v_{4}\)};
+      \node[fvertex] (6) at (9.4, 2.2)  {\(v_{5}\)};
+
+      \node[vertex] (10) at (0, 0)       {};
+      \node[vertex] (11) at (-3, 4)      {};
+      \node[vertex] (12) at (-0.6, 2.7)  {};
+      \node[vertex] (13) at (2, 4)       {};
+      \node[vertex] (14) at (4.4, 2.7)   {};
+      \node[vertex] (15) at (7, 4)       {};
+      \node[vertex] (16) at (9.4, 2.7)   {};
+
+      \path[edge] (10) -- (11);
+      \path[edge] (10) -- (12);
+      \path[edge] (11) -- (12);
+      \path[edge] (12) -- (13);
+      \path[edge] (12) -- (14);
+      \path[edge] (13) -- (14);
+      \path[edge] (14) -- (15);
+      \draw[dashed] (14) -- (16);
+      \draw[dashed] (15) -- (16);
+
+
       \draw[dashed] ( 0, 0) circle (2.5);
       \draw[dashed] (-3, 4) circle (2.5);
       \draw[dashed] ( 2, 4) circle (2.5);
@@ -442,7 +648,7 @@
       \path[edge] (0, 0)  -- (10, 0);
       \path[edge] (-3, 4) -- (10, 4);
     \end{tikzpicture}
-  \end{figure}
+  \end{figure}  
 \end{frame}
 
 \begin{frame}[standout]
