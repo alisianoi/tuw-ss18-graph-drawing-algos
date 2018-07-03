@@ -601,15 +601,17 @@
       \draw[dashed] ( 0, 0) circle (2.5);
       \draw[dashed] (-3, 4) circle (2.5);
 
+      \draw[dedge] (2,7) -- node[swap]{\(\vec{\bf{d}}\)} (7, 7);
+
       \path[edge] (0, 0)  -- (-3, 4);
-      \path[edge] (0, 0)  -- (10, 0);
-      \path[edge] (-3, 4) -- (10, 4);
+      \path[edge] (0, 0)  -- (15, 0);
+      \path[edge] (-3, 4) -- (15, 4);
     \end{tikzpicture}
   \end{figure}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Possible chains: positive chain}
+  \frametitle{Possible chains: positive sequence}
 
   \begin{figure}
     \begin{tikzpicture}[scale=0.5,auto,swap]
@@ -617,39 +619,129 @@
       \node[fvertex] (1) at (-3, 4.7)   {\(v_{0}^{+}\)};
       \node[fvertex] (2) at (-0.3, 3.2) {\(v_{1}\)};
       \node[fvertex] (3) at ( 2, 4.5)   {\(v_{2}\)};
-      \node[fvertex] (4) at (4.4, 2.2)  {\(v_{3}\)};
+      \node[fvertex] (4) at (4.4, 3.2)  {\(v_{3}\)};
       \node[fvertex] (5) at (7, 4.5)    {\(v_{4}\)};
-      \node[fvertex] (6) at (9.4, 2.2)  {\(v_{5}\)};
+      \node[fvertex] (6) at (9.4, 3.2)  {\(v_{5}\)};
+      \node[fvertex] (7) at (12, 4.5)   {\(v_{6}\)};
+      \node[fvertex] (8) at (14.4, 3.2) {\(v_{7}\)};
 
-      \node[vertex] (10) at (0, 0)       {};
-      \node[vertex] (11) at (-3, 4)      {};
-      \node[vertex] (12) at (-0.6, 2.7)  {};
-      \node[vertex] (13) at (2, 4)       {};
-      \node[vertex] (14) at (4.4, 2.7)   {};
-      \node[vertex] (15) at (7, 4)       {};
-      \node[vertex] (16) at (9.4, 2.7)   {};
+      \node[vertex] (20) at (0, 0)       {};
+      \node[vertex] (21) at (-3, 4)      {};
+      \node[vertex] (22) at (-0.6, 2.7)  {};
+      \node[vertex] (23) at (2, 4)       {};
+      \node[vertex] (24) at (4.4, 2.7)   {};
+      \node[vertex] (25) at (7, 4)       {};
+      \node[vertex] (26) at (9.4, 2.7)   {};
+      \node[vertex] (27) at (12, 4)      {};
+      \node[vertex] (28) at (14.4, 2.7)  {};
 
-      \path[edge] (10) -- (11);
-      \path[edge] (10) -- (12);
-      \path[edge] (11) -- (12);
-      \path[edge] (12) -- (13);
-      \path[edge] (12) -- (14);
-      \path[edge] (13) -- (14);
-      \path[edge] (14) -- (15);
-      \draw[dashed] (14) -- (16);
-      \draw[dashed] (15) -- (16);
-
+      \path[edge] (20) -- (21);
+      \path[edge] (20) -- (22);
+      \path[edge] (21) -- (22);
+      \path[edge] (22) -- (23);
+      \path[edge] (22) -- (24);
+      \path[edge] (23) -- (24);
+      \path[edge] (24) -- (25);
+      \path[edge] (24) -- (26);
+      \path[edge] (25) -- (26);
+      \draw[dashed] (25) -- (27);
+      \draw[dashed] (26) -- (27);
+      \draw[dashed] (26) -- (28);
+      \draw[dashed] (27) -- (28);
 
       \draw[dashed] ( 0, 0) circle (2.5);
       \draw[dashed] (-3, 4) circle (2.5);
       \draw[dashed] ( 2, 4) circle (2.5);
 
+      \draw[dedge] (2,7) -- node[swap]{\(\vec{\bf{d}}\)} (7, 7);
+
       \path[edge] (0, 0)  -- (-3, 4);
-      \path[edge] (0, 0)  -- (10, 0);
-      \path[edge] (-3, 4) -- (10, 4);
+      \path[edge] (0, 0)  -- (15.5, 0);
+      \path[edge] (-3, 4) -- (15.5, 4);
     \end{tikzpicture}
   \end{figure}  
 \end{frame}
+
+\begin{frame}
+  \frametitle{Possible chains: positive and negative sequences}
+
+  \begin{figure}
+    \begin{tikzpicture}[scale=0.5,auto,swap]
+      \node[fvertex] (0) at (0, -0.7)   {\(v_{0}^{-}\)};
+      \node[fvertex] (1) at (-3, 4.7)   {\(v_{0}^{+}\)};
+      \node[fvertex] (2) at (-0.3, 3.2) {\(v_{1}\)};
+      \node[fvertex] (3) at ( 2, 4.5)   {\(v_{2}\)};
+      \node[fvertex] (4) at (4.4, 3.2)  {\(v_{3}\)};
+      \node[fvertex] (5) at (7, 4.5)    {\(v_{4}\)};
+      \node[fvertex] (6) at (9.4, 3.2)  {\(v_{5}\)};
+      \node[fvertex] (7) at (12, 4.5)   {\(v_{6}\)};
+      \node[fvertex] (8) at (14.4, 3.2) {\(v_{7}\)};
+
+
+      \node[fvertex] (10) at (5 , -0.7) {\(v_{-2}\)};
+      \node[fvertex] (11) at (10, -0.7) {\(v_{-4}\)};
+      \node[fvertex] (12) at (15, -0.7) {\(v_{-6}\)};
+
+      \node[fvertex] (13) at (5.2, 2)  {\(v_{-1}\)};
+      \node[fvertex] (14) at (10.2, 2)  {\(v_{-3}\)};
+      \node[fvertex] (15) at (15.2, 2) {\(v_{-5}\)};
+
+      \node[vertex] (20) at (0, 0)       {};
+      \node[vertex] (21) at (-3, 4)      {};
+      \node[vertex] (22) at (-0.6, 2.7)  {};
+      \node[vertex] (23) at (2, 4)       {};
+      \node[vertex] (24) at (4.4, 2.7)   {};
+      \node[vertex] (25) at (7, 4)       {};
+      \node[vertex] (26) at (9.4, 2.7)   {};
+      \node[vertex] (27) at (12, 4)      {};
+      \node[vertex] (28) at (14.4, 2.7)  {};
+
+      \node[vertex] (29) at (5, 0)  {};
+      \node[vertex] (30) at (10, 0) {};
+      \node[vertex] (31) at (15, 0) {};
+
+      \path[edge] (20) -- (21);
+      \path[edge] (20) -- (22);
+      \path[edge] (20) -- (24);
+      \path[edge] (21) -- (22);
+      \path[edge] (22) -- (23);
+      \path[edge] (22) -- (24);
+      \path[edge] (23) -- (24);
+      \path[edge] (24) -- (25);
+      \path[edge] (24) -- (26);
+      \path[edge] (24) -- (29);
+      \path[edge] (25) -- (26);
+      \path[edge] (26) -- (29);
+      \path[edge] (26) -- (30);
+      \draw[dashed] (28) -- (30);
+      \draw[dashed] (28) -- (31);
+      \draw[dashed] (26) -- (27);
+      \draw[dashed] (26) -- (28);
+      \draw[dashed] (27) -- (28);
+
+      \draw[dashed] ( 0, 0) circle (2.5);
+      \draw[dashed] (-3, 4) circle (2.5);
+      \draw[dashed] ( 2, 4) circle (2.5);
+
+      \draw[dedge] (2,7) -- node[swap]{\(\vec{\bf{d}}\)} (7, 7);
+
+      \path[edge] (0, 0)  -- (-3, 4);
+      \path[edge] (0, 0)  -- (15.5, 0);
+      \path[edge] (-3, 4) -- (15.5, 4);
+    \end{tikzpicture}
+  \end{figure}  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Drawing algorithm}
+
+  \begin{itemize}
+  \item Let \(C_{e'}\) be the root of the chain decomposition tree.
+  \item Select a line segment \(s\) of length 1 in the plane and an initial direction \(\vec{\bf{d}}\) not parallel to \(s\) s.t. it forms a degree less than \(\theta_0 = \arccos(1/4)\) with s.
+  \item Apply Lemma to compute U-strip drawing of \(C_{e'}\) in \(S(e', \vec{\bf{s}})\).
+  \item Each long edge \(e\in L_{e'}\) is drawn with length 1 and not parallel to \(\vec{\bf{d}}\). It forms an angle less than \(\theta_0\), so the conditions of the Lemma still apply. Draw \(C_{e}\) in \(S(e, \vec{\bf{s}})\).
+    \end{itemize}
+  \end{frame}
 
 \begin{frame}[standout]
   Thank you!
